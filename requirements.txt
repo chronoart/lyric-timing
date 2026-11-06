@@ -1,0 +1,8 @@
+stable-ts==2.19.1
+faster-whisper==1.2.1
+ctranslate2==4.8.5
+gradio==6.31.0
+huggingface_hub==2.4.0
+numpy==2.2.6
+pandas==2.3.3
+soundfile==0.14.0

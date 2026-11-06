@@ -1,0 +1,8 @@
+venv/
+tools/
+models/
+__pycache__/
+*_timing_*.json
+*.wav
+*.mp3
+*.flac
