@@ -52,6 +52,14 @@
 - ずれていた時は、表の **開始秒・終了秒** を直接書き換えてください。書き換えた値で計算されます
 - 解析結果は音源と同じフォルダに `〇〇_timing_xxxx.json` として保存され、次回はすぐに表示されます
 
+### VRAM について（ComfyUI などと同時に使う場合）
+
+最初に「解析」を押した時に音声認識モデルを読み込み、**黒い画面を閉じるまで VRAM を約 4GB 使い続けます**。
+
+- VRAM に余裕がある方は、ComfyUI などと同時に使えます
+- VRAM 12GB 以下で動画生成（MiniMax H3 など）をする方は、**先に必要な区間の秒数をまとめて控えてから、黒い画面を閉じて** ComfyUI を起動してください。同時に使うと、生成が遅くなったりメモリ不足で止まったりすることがあります
+- 一度解析した曲は結果が保存されているので、開き直しても（同じ音源・歌詞なら）すぐ表示され、VRAM もほとんど使いません
+
 ## アンインストール
 
 フォルダごと削除するだけです。
@@ -72,3 +80,5 @@ Pick a range of phrases to get the start time, duration, and frame counts for Mi
 3. Run `run.bat`, drop a **vocal-only** audio file and a lyrics text file, then press 解析 (Analyze)
 
 The UI is in Japanese and alignment is tuned for Japanese lyrics.
+
+VRAM: after the first analysis the model stays loaded (about 4 GB VRAM) until you close the console window. On GPUs with 12 GB or less, note your timings first and close Lyric Timing before generating video in ComfyUI. Re-opening is instant for songs already analyzed (results are cached) and uses almost no VRAM.
